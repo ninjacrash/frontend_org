@@ -59,11 +59,15 @@ class MapDelegate
 					var adiv = "";
 					for(var xx in items)
 					{
-						locations[locations.length] = [items[xx].Shelter_Name + "<br/>" + items[xx].street_address + ", " + items[xx].city  + " " + items[xx].state + "<br/>" + items[xx].phone, items[xx].Latitude, items[xx].Longitude];
+						console.log(items[xx]);
+						locations[locations.length] = [items[xx].Shelter_Name + "<br/>" + items[xx].street_address + ", " + items[xx].city  + " " + items[xx].state + "<br/>" + items[xx].phone + "<br/>Population/Capacity - " + items[xx].Population + "/" + items[xx].Capacity, items[xx].Latitude, items[xx].Longitude];
 						adiv = "<br/><div class='shelterLocation'>";
 						adiv += "	<div class='shelterLabel'>" + items[xx].Shelter_Name + "</div>";
 						adiv += "	<div class='shelterLabel'>" + items[xx].street_address + ", " + items[xx].city + ", " + items[xx].state + "</div>";
-						adiv += "	<div class='shelterLabel'>" + items[xx].phone + "</div><br/>";
+						adiv += "	<div class='shelterLabel'>" + items[xx].phone + "</div>";
+						adiv += "	<div class='shelterLabel'>Population/Capacity - " + items[xx].Population + "/" + items[xx].Capacity + "</div><br/>";
+						
+						
 						$("#shelterList").append($(adiv));
 					}
 					root.createMap(locations);
