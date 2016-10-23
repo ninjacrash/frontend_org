@@ -42,7 +42,6 @@ class MapDelegate
 		for(var i = 0; i < data.length; i++)
 		{
 			var theData = data[i];
-			
 			items["item" + theData.Shelter_Id] = theData;
 			$.get("http://pg.globalhack.ninja/shelter?shelter_id=eq." + theData.Shelter_Id, function(xdata){
 				//console.log("Got data----------------------");
