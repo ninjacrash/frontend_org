@@ -74,7 +74,15 @@ var loggedIn = false;
 			adiv += "	<div class='userRow userHomeless'><div class='userPersonLabel'>Homeless: </div><div class='userPersonValue'>" + person.homeless + "</div></div>";
 			adiv += "	<div class='userRow userEmployed'><div class='userPersonLabel'>Employed: </div><div class='userPersonValue'>" + person.employed + "</div></div>";
 			adiv += "	<button class='userRow userContact'>CONTACT USER</button>";
-			adiv += "	<button class='userRow userPrediction'>PREDICTIVE ANALYTICS</button>";
+			if(person.homeless == true)
+			{
+				adiv += "	<button class='userRow userPrediction' style='pointer-events:none; opacity: 0.5;'>PREDICTIVE ANALYTICS</button>";
+			}
+			else
+			{
+				adiv += "	<button class='userRow userPrediction'>PREDICTIVE ANALYTICS</button>";
+			}
+			
 			
 			//adiv += "	<a   class='contactUser'>Predictive Analysis</div>";
 			adiv += "</div>";
